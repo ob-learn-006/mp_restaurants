@@ -2,8 +2,7 @@ namespace mp_restaurants;
 
 using { Currency } from '@sap/cds/common';
  
- service CooleRestaurantsBerlinService {
-    
+   
     entity Restaurant {
         key ID: Integer;
         name: String;
@@ -24,4 +23,3 @@ using { Currency } from '@sap/cds/common';
         preis : Currency; 
         restaurant : Association to Restaurant;
     }
-}
