@@ -1,13 +1,11 @@
 namespace mp_restaurants;
 
 using { Currency } from '@sap/cds/common';
- 
    
     entity Restaurant {
         key ID: Integer;
         name: String;
-        adresse: String;
-        strasse : String;
+        strasse : String;
         hausnummer : Integer;
         plz : Integer;
         stadtteil : String;
