@@ -12,7 +12,7 @@ using { Currency } from '@sap/cds/common';
         oeffnungszeiten : String;
         telefon : Integer64;
         website : String;
-        gerichte : Association to many Gericht;
+        gerichte : Association to many Gericht on gerichte.restaurant = $self;
     }
     entity Gericht {
         key ID: Integer;
