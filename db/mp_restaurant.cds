@@ -17,7 +17,6 @@ using { Currency } from '@sap/cds/common';
     entity Gericht {
         key ID: Integer;
         kurzname: String;
-        kurzbeschreibung: String;
         preis : Currency; 
         restaurant : Association to Restaurant;
     }
