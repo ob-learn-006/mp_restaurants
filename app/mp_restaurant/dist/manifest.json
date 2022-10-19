@@ -108,7 +108,6 @@
             "css": []
         },
         "routing": {
-            "config": {},
             "routes": [
                 {
                     "pattern": ":?query:",
@@ -170,7 +169,12 @@
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "Gericht"
+                            "entitySet": "Gericht",
+                            "content": {
+                                "header": {
+                                    "visible": true
+                                }
+                            }
                         }
                     }
                 }
