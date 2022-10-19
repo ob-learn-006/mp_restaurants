@@ -1,7 +1,6 @@
 namespace mp_restaurants;
 
-using { Currency } from '@sap/cds/common';
-   
+  
     entity Restaurant {
         key ID: Integer;
         name: String;
@@ -16,6 +15,6 @@ using { Currency } from '@sap/cds/common';
     entity Gericht {
         key ID: Integer;
         kurzname: String;
-        preis : Currency; 
+        preis : String; 
         restaurant : Association to Restaurant;
     }
