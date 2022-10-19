@@ -11,7 +11,6 @@ using { Currency } from '@sap/cds/common';
         stadtteil : String;
         oeffnungszeiten : String;
         telefon : String;
-        website : String;
         gerichte : Association to many Gericht on gerichte.restaurant = $self;
     }
     entity Gericht {
