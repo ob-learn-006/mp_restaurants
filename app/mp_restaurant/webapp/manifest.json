@@ -158,6 +158,16 @@
                                         "route": "GerichtObjectPage"
                                     }
                                 }
+                            },
+                            "controlConfiguration": {
+                                "gerichte/@com.sap.vocabularies.UI.v1.LineItem#gerichte": {
+                                    "tableSettings": {
+                                        "type": "ResponsiveTable",
+                                        "personalization": {
+                                            "sort": true
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

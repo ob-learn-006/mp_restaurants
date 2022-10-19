@@ -81,21 +81,6 @@ annotate service.Restaurant with @(
                 Label : 'Telefonkontakt',
                 Value : telefon,
             },
-            {
-                $Type : 'UI.DataField',
-                Value : gerichte.restaurant.gerichte.ID,
-                Label : 'Gericht-ID',
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : gerichte.restaurant.gerichte.kurzname,
-                Label : 'Gericht',
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : gerichte.restaurant.gerichte.preis_code,
-                Label : 'Preis',
-            },
         ],
     },
     UI.Facets : [
@@ -104,6 +89,12 @@ annotate service.Restaurant with @(
             ID : 'GeneratedFacet1',
             Label : 'General Information',
             Target : '@UI.FieldGroup#GeneratedGroup1',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Gerichte',
+            ID : 'gerichte',
+            Target : 'gerichte/@UI.LineItem#gerichte',
         },
     ]
 );
@@ -147,7 +138,7 @@ annotate service.Gericht with @(
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
-            Label : 'gerichte',
+            Label : 'Gerichte-Infos',
             ID : 'gerichte',
             Target : '@UI.Identification',
         },
@@ -156,7 +147,7 @@ annotate service.Gericht with @(
         {
             $Type : 'UI.DataField',
             Value : ID,
-            Label : 'ID',
+            Label : 'Gerichte-ID',
         },{
             $Type : 'UI.DataField',
             Value : kurzname,
@@ -164,15 +155,49 @@ annotate service.Gericht with @(
         },{
             $Type : 'UI.DataField',
             Value : preis_code,
-        },{
-            $Type : 'UI.DataField',
-            Value : restaurant_ID,
-            Label : 'restaurant_ID',
+            Label : 'Preis in EUR',
         },{
             $Type : 'UI.DataField',
             Value : restaurant.name,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : restaurant.gerichte.restaurant.oeffnungszeiten,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : restaurant.gerichte.restaurant.telefon,
         },{
             $Type : 'UI.DataField',
+            Value : restaurant.gerichte.restaurant.strasse,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : restaurant.gerichte.restaurant.hausnummer,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : restaurant.gerichte.restaurant.plz,
+        },
+        {
+            $Type : 'UI.DataField',
             Value : restaurant.stadtteil,
+        },]
+);
+annotate service.Gericht with @(
+    UI.LineItem #gerichte : [
+        {
+            $Type : 'UI.DataField',
+            Value : restaurant.gerichte.ID,
+            Label : 'Gerichte-ID',
+        },{
+            $Type : 'UI.DataField',
+            Value : restaurant.gerichte.kurzname,
+            Label : 'Gerichtname',
+            ![@UI.Importance] : #High,
+        },{
+            $Type : 'UI.DataField',
+            Value : restaurant.gerichte.preis_code,
+            Label : 'Preis in EUR',
         },]
 );
