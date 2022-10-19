@@ -10,7 +10,7 @@ using { Currency } from '@sap/cds/common';
         plz : Integer;
         stadtteil : String;
         oeffnungszeiten : String;
-        telefon : Integer64;
+        telefon : String;
         website : String;
         gerichte : Association to many Gericht on gerichte.restaurant = $self;
     }
